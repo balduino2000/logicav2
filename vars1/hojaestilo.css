@@ -1,0 +1,40 @@
+/* archivo general css para gestionar la apariencia de 
+sitio web
+
+/* propiedades generales para tabla, encabezado y celdas */
+table, th, td {
+	border: 3px solid black;
+}
+
+/*Propiedades generales para la etiqueta td */
+td{
+	border: 1.5px solid orange;
+	padding: 10px;
+	text-align: center;
+}
+
+/* clase para centrar el elemento table */
+table.centrado{
+	width: 30%;
+	margin-left: 35%;
+	margin-right: 15%;
+}
+
+/* efecto cuando el mouse pasa sobre cada fila */
+tr:hover{
+	background-color: #33FFF6;
+}
+
+/* clase encabezado para las tablas */
+.encabezado {
+	background-color: #4caf50;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.catsandstars {
+  background-image:  url("../imagen/LOGOULS.png"), 
+                     url("../logica.html");
+  background-color: transparent;
+}

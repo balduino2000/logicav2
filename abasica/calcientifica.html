@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<HEAD>
+<title>Calculadora cientifica</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+function Calcular() {
+var NUMEROYSIGNO = document.micalc.meterdatos.value;      <!--ME CREO UNA VARIABLE QUE ES IGUAL=document.nombreformulario.dondesemuestra.value-->
+document.micalc.meterdatos.value = eval(NUMEROYSIGNO);     <!-- y digo que los datos metidos me lo cualcule la funcion eval(NUMEROYSIGNO)
+
+               }
+                  <!---Lo podriamos haber hecho directo pero mejor con una variable independiente NUMEROYSIGNO-->
+/*function Calcular (){document.micalc.meterdatos.value=eval(document.micalc.meterdatos.value)} */        
+               
+function num(x) {document.micalc.meterdatos.value += x;}    <!--EN ESTA FUNCION METO LOS NUMEROS DEL 1 AL 9--> 
+function signo(y){document.micalc.meterdatos.value += y;}   <!--EN ESTA FUNCION METO LOS  SIGNOs + - * / ( ) -->       
+function eliminar(){document.micalc.meterdatos.value= document.micalc.meterdatos.value.substring(0, document.micalc.meterdatos.value.length - 1)}
+
+<!---------------------------Funciones donde se ocupa un solo numero--------------------------------------------------------------------------------------->
+function derivada() {document.micalc.meterdatos.value = 1/(document.micalc.meterdatos.value);}
+function cuadrado() {document.micalc.meterdatos.value = eval(document.micalc.meterdatos.value)*eval(document.micalc.meterdatos.value);}
+function     cubo() {document.micalc.meterdatos.value = eval(document.micalc.meterdatos.value)*eval(document.micalc.meterdatos.value)*eval(document.micalc.meterdatos.value);}
+function       pi() {document.micalc.meterdatos.value += Math.PI;}
+function     raiz() {document.micalc.meterdatos.value = Math.sqrt(document.micalc.meterdatos.value);}
+function      cos() {document.micalc.meterdatos.value = Math.cos(document.micalc.meterdatos.value);}
+function      sen() {document.micalc.meterdatos.value = Math.sin(document.micalc.meterdatos.value);}
+function      tan() {document.micalc.meterdatos.value = Math.tan(document.micalc.meterdatos.value);}
+<!---------------------------Funciones donde se ocupa dos numero--------------------------------------------------------------------------------------->
+function potencia() {var exponente = prompt('¿Indique el numero de exponente?')
+document.micalc.meterdatos.value = Math.pow(document.micalc.meterdatos.value, exponente);
+                 }
+function porcent () {document.micalc.meterdatos.value= eval(document.micalc.meterdatos.value)/100;}
+</script>
+
+</HEAD>
+</b>
+<BODY style="font-family: Verdana">
+<p align="center"><b>CALCULADORA HTML<p>
+
+<center>
+<div style="float:none; padding:1em; width:22%; background-color:#BDBDBD; border-radius:15px; box-shadow: 10px 10px 3px #888888;">
+<FORM NAME="micalc">
+<table>
+ <tr>
+<INPUT TYPE="text" NAME="meterdatos"  SIZE="28" MAXLENGTH="30" >
+</tr>
+</table>
+<hr><!------------------------------------------------------------------------------------------------------>
+<table >
+<tr>
+<INPUT TYPE="button" VALUE="  1  "  onClick="num(1)"> 
+<INPUT TYPE="button" VALUE="  2  "  onClick="num(2)"> 
+<INPUT TYPE="button" VALUE="  3  "  onClick="num(3)">
+<INPUT TYPE="button" VALUE="  +  "  onClick="signo('+')" >
+<INPUT TYPE="button" VALUE="  C  "  onClick="document.micalc.meterdatos.value = ''; " >
+</tr>
+
+<hr><!------------------------------------------------------------------------------------------------------>
+
+<tr>
+<INPUT TYPE="button" VALUE="  4  "  onClick="num(4)">
+<INPUT TYPE="button" VALUE="  5  "  onClick="num(5)"> 
+<INPUT TYPE="button" VALUE="  6  "  onClick="num(6)">
+<INPUT TYPE="button" VALUE="   -  "  onClick="signo('-')" >
+<INPUT TYPE="button" VALUE=" <---"  onClick="eliminar()">
+</tr>
+
+<hr><!------------------------------------------------------------------------------------------------------>
+
+<tr>
+<INPUT TYPE="button" VALUE="  7  "  onClick="num(7)"> 
+<INPUT TYPE="button" VALUE="  8  "  onClick="num(8)"> 
+<INPUT TYPE="button" VALUE="  9  "  onClick="num(9)">
+<INPUT TYPE="button" VALUE="  x  "  onClick="signo('*')" >
+<INPUT TYPE="button" VALUE="  %  "  onClick="porcent()">
+</tr>
+
+<hr><!------------------------------------------------------------------------------------------------------>
+<tr>
+<INPUT TYPE="button" VALUE="  0  "       onClick="num(0)">
+<INPUT TYPE="button" VALUE="  .  "      onClick="signo('.')">
+<INPUT TYPE="button" VALUE=" Pi  "       onClick="pi()">
+<INPUT TYPE="button" VALUE="  /   "      onClick="signo('/')" >
+<INPUT TYPE="button" VALUE="  &#8730   " onClick="raiz()" >
+</tr>
+<hr><!------------------------------------------------------------------------------------------------------>
+<tr>
+<INPUT TYPE="button" VALUE="  (   "           onClick="signo('(')">
+<INPUT TYPE="button" VALUE="  )  "            onClick="signo(')')">
+<INPUT TYPE="button" VALUE="1/x "             onClick="derivada()">
+<INPUT TYPE="button" VALUE="  ^   "           onClick="potencia()" >
+<INPUT TYPE="button" VALUE="  x&sup2  "       onClick="cuadrado()"> 
+</tr>
+<hr><!------------------------------------------------------------------------------------------------------>
+<tr>
+<INPUT TYPE="button" VALUE=" Sen  "         onClick="sen()" >
+<INPUT TYPE="button" VALUE=" Cos  "         onClick="cos()" >
+<INPUT TYPE="button" VALUE=" Tan   "          onClick="tan()" >
+ <INPUT TYPE="button" VALUE="  x&sup3  "       onClick="cubo()"> 
+</tr>
+<hr><!------------------------------------------------------------------------------------------------------>
+<tr>
+<INPUT TYPE="button" VALUE="                       =                       "   onClick="Calcular()" >
+</tr>
+</table>
+
+</FORM>
+</div>
+</center>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+	<TITLE>Datos Generales del estudiante</TITLE>
+</head>
+<body>
+<form name="frmcongreso" method="POST" action="#">
+<table border="1" align="center">
+<tr>
+	<td colspan="2" align="center"><b>Datos Generales del Estudiante</b></td>
+</tr>
+<tr>
+	<td>Carnet</td>
+	<td><input type="text" name="txtcarnet" width="20" maxlength="5"></td>
+</tr>
+<tr>
+	<td>Apellidos</td>
+	<td><input type="text" name="txtapellidos"></td>
+</tr>
+<tr>
+	<td>Nombres</td>
+	<td><input type="text" name="txtnombres"></td>
+</tr>
+<tr>
+	<td>Correo Electrónico</td>
+	<td><input type="text" name="txtcorreoelectronico"></td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><b>Datos académicos</b></td>
+</tr>
+<tr>
+	<td>Carrera</td>
+	<td>
+		<select name="chococarrera">
+			<option value="na" disabled="disabled" selected="selected">Seleccione</option>
+			<option value="licomputo">Licenciatura en Ciencias de la Computación</option>
+			<option value="tecsistemas">Técnico en Sistemas</option>
+			<option value="ingagro">Ingeniería en Agroecología</option>
+			<option value="lictrabajo">Licenciatura en Trabajo Social</option>
+	</td>
+</tr>
+<tr>
+	<td>Temas de Interes</td>
+	<td>
+		<input type="checkbox" name="chkgamesfest" value="1">Game Fest<br>
+		<input type="checkbox" name="chkforenses" value="1">Ciencias Forenses<br>
+		<input type="checkbox" name="chkcultural" value="1">Acto Cultural
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><b>Jornada a las que asistira</b></td>
+</tr>
+<tr>
+	<td>Seleccione</td>
+	<td>
+		<input type="radio" name="jornadas" value="am">Matutina<br>
+		<input type="radio" name="jornadas" value="pm">Vespertina<br>
+		<input type="radio" name="jornadas" value="completa">Completa
+	</td>
+</tr>
+<tr>
+	<td>Comentarios Adicionales</td>
+	<td>
+		<textarea rows="4" cols="50">
+		</textarea>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<button type="submit" name="btnguardar">Guardar Datos</button> &nbsp;<button type="reset">
+		Reiniciar</button>&nbsp;
+		<a href="#">Regresar<a>		
+	</td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>
